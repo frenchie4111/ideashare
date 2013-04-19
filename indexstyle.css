@@ -1,0 +1,162 @@
+body {
+	background-color: white;
+	font-family: Arial;
+
+	padding-top: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+
+	margin-right: 0px;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+#top
+{
+	padding-top: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+
+	margin-right: 0px;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-bottom: 5px;
+
+	background-color: #145689;
+	color: white;
+}
+
+#title
+{
+	margin: 5px 5px 5px 5px;
+}
+#titletext
+{
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+}
+
+#menubar
+{
+	padding-right: 5px;
+	padding-left: 5px;
+
+	float: right;
+}
+
+#menuitemselected
+{
+	background-color: #66A3D2;
+	color: black;
+
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+.menuitem
+{
+	padding-right: 5px;
+	padding-left: 5px;
+
+	color: white;
+	text-decoration: none;
+}
+.menuitem:hover
+{
+	cursor: hand;
+	color: black;
+	background-color: #66A3D2;
+}
+
+.vote
+{
+	text-align: center;
+}
+
+.idea
+{
+	background-color: #3F92D2;
+	margin:0px 5px 5px 5px;
+	border-radius: 5px;
+}
+
+.showchildren
+{
+	padding-right: 5px;
+	text-decoration: none;
+}
+.showchildren:hover
+{
+	text-decoration: underline;	
+	cursor:hand;
+}
+
+.ideabottom
+{
+	font-size: 10pt;
+	height: auto;
+	width: auto;
+}
+.ideabottomauthor
+{
+	float:right;
+}
+
+.invertedidea
+{
+	/*background-color: #A7CCE9;*/
+	background-color: white;
+	margin-bottom: 5px;
+	border-radius: 5px;
+}
+.invertedideabottom
+{
+	font-size: 10pt;
+	height: auto;
+	width: auto;
+}
+.invertedideabottomauthor
+{
+	font-size: 10pt;
+	float:right;
+	width: auto;
+}
+
+.box span
+{
+
+}
+
+.ideaaddon
+{
+	padding-right: 5px;
+}
+.ideaaddonbox
+{
+	background-color: white;
+	border-radius: 5px;
+	padding: 5px 5px 5px 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.ideaaddontext
+{
+	text-decoration: none;
+}
+.ideaaddontext:hover
+{
+	text-decoration: underline;	
+	cursor:hand;
+}
+
+textarea
+{
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}

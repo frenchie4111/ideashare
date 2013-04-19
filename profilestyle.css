@@ -1,0 +1,95 @@
+body {
+	background-color: white;
+	font-family: Arial;
+
+	padding-top: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+
+	margin-right: 0px;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+#top
+{
+	padding-top: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+
+	margin-right: 0px;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+
+	background-color: #145689;
+	color: white;
+}
+
+#title
+{
+	margin: 5px 5px 5px 5px;
+}
+#titletext
+{
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+}
+
+#menubar
+{
+	padding-right: 5px;
+	padding-left: 5px;
+
+	float: right;
+}
+.menuitem
+{
+	padding-right: 5px;
+	padding-left: 5px;
+
+	color: white;
+	text-decoration: none;
+}
+.menuitem:hover
+{
+	cursor: hand;
+	color: black;
+	background-color: #66A3D2;
+}
+
+#userbar
+{
+	color: white;
+	padding: 0px 0px 0px 5px;
+	background-color: #3F92D2;
+}
+#username
+{
+	font-weight: bold;
+}
+#usermenubar
+{
+	padding-right: 5px;
+	padding-left: 5px;
+
+	float: right;
+}
+.usermenuitem
+{
+	padding-right: 5px;
+	padding-left: 5px;
+
+	color: white;
+	text-decoration: none;
+}
+.usermenuitem:hover
+{
+	cursor: hand;
+	color: black;
+	background-color: #66A3D2;
+}
