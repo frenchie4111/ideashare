@@ -11,6 +11,11 @@ ideas.
 
 The website is currently hosted here: http://mikelyons.org/ideashare
 
+Future Featuers
+---------------
+- [ ] Ajax Login/Create account menu's
+- [ ] Ajax main submission (Not inkling submission)
+
 Known issues
 ------------
 - [ ] Voting  has been turned off due to multi user bug
