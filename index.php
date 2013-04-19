@@ -1,7 +1,8 @@
 <html>
 <head>
 <?php
-	include "connect.php";
+
+	include "connect.php"; // Connection script for connecting to database
 	$con = connect();
 	selectDB("test", $con);
 
@@ -18,7 +19,7 @@
 			<a id="titletext" href="index.php">ideashare</a>
 			<?php  
 				session_start();
-				if( isset( $_SESSION['username'] ) )
+				if( isset( $_SESSION['username'] ) ) // Checks if user is logged in
 				{
 					echo "- " . $_SESSION['username'];
 					$logged = true;
@@ -28,7 +29,7 @@
 
 		<div id="menubar">
 			<?php
-				if( !isset( $_GET['order'] ) )
+				if( !isset( $_GET['order'] ) ) // If no order then don't show either as selected
 				{
 			?>
 					<a class="menuitem" href="?order=top">Top</a>
@@ -51,7 +52,7 @@
 				}
 			?>
 			<?php
-				if( $logged )
+				if( $logged ) // If Logged in don't show Login options
 				{
 					?>
 						<a class="menuitem" href="submit.php">Submit</a>
@@ -82,7 +83,7 @@
 		
 		$result = mysql_query($query);
 
-		while($row = mysql_fetch_array($result))
+		while($row = mysql_fetch_array($result)) // Print out ideas in proper format
 		{
 			echo "
 				<div class='idea' id='div" . $row['id'] . "'>

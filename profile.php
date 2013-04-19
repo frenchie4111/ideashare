@@ -1,6 +1,11 @@
 <html>
 <head>
 <?php
+	
+	/*
+	 * 
+	 */
+
 	include "connect.php";
 	$con = connect();
 	selectDB("test", $con);

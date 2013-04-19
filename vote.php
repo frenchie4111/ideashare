@@ -1,6 +1,16 @@
 <?php
+
+	/*
+	 * file: vote.php
+	 * Script that is intended to be called by ajax that takes an idea and adds one to it's vote count.
+	 *
+	 * Also returns vote count of given post id, whether or not you asked told it to vote
+	 *
+	 * Author: Mike Lyons <mdl0394@gmail.com>
+	 */
+
 	error_reporting(~E_NOTICE);
-	include "connect.php";
+	include "connect.php"; // Connects to the database
 	if( isset($_POST['id']) && isset($_POST['vote']) )
 	{
 		session_start();
@@ -29,14 +39,11 @@
 				array_push( $_SESSION['voted'], $_POST['id'] );
 			}
 		}
-
-
-		//echo $up_query;
 	}
 	$con = connect();
 	selectDB( "test", $con );
 	$query = "SELECT * FROM ideas WHERE id=" . $_REQUEST['id'] . "";
-	//echo $query;
+
 	$results = mysql_query( $query );
 	$row = mysql_fetch_array( $results );
 	echo $row['rating'];

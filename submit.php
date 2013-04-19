@@ -1,8 +1,24 @@
 <?php
-	error_reporting(~E_NOTICE);
-	ini_set('display_errors', 'On');
 
-	include "connect.php";
+	/*
+	 * file: submit.php
+	 * This file contains both the form, and the submission for submitting an idea
+	 *
+	 * TODO: Make this into an ajax request so the user does not ever have to leave the homepage to submit a story
+	 *
+	 * Author: Mike Lyons <mdl0394@gmail.com>
+	 */
+
+	error_reporting(~E_NOTICE); // Don't show me notices when error reporting
+	ini_set('display_errors', 'On'); // Do show me error messages
+
+	include "connect.php"; // Scripts for connecting to database
+
+	/*
+	 * function displayForm()
+	 * function that prints out the html for the submission form when called.
+	 * to be used to not print the form when it is not desired (After the story is submitted)
+	 */
 	function displayForm()
 	{
 		?>
@@ -25,6 +41,14 @@
 			</form>
 		<?php
 	}
+
+	/*
+	 * Function checkCAPTCH()
+	 *
+	 * PHP Fucntion that checks if captcha is correct or not
+	 *
+	 * @return - bool - whether or not the captach was correct
+	 */
 	function checkCAPTCHA()
 	{
 		require_once('recaptchalib.php');
@@ -46,9 +70,9 @@
 		}
 	}
 	session_start();
-	if( isset( $_SESSION['username'] ) )
+	if( isset( $_SESSION['username'] ) ) // Checks if user is logged in
 	{
-		$con = connect();
+		$con = connect(); // Connect to database
 		selectDB("test", $con);
 		$query = "SELECT * FROM authors WHERE username='" . mysql_real_escape_string($_SESSION['username'], $con) . "'";
 		$results = mysql_query( $query );
@@ -58,16 +82,18 @@
 		{
 			if( !isset( $_POST["hidden"] ) && $_POST["hidden"] != "1")
 			{
+				// If the user has not submitted anything, BUT IS LOGGED ON, then show them the form
 				displayForm();
 			}
 			else
 			{
-				if( checkCAPTCHA() ==TRUE )
+				if( checkCAPTCHA() == TRUE ) // If the captcha clears
 				{
-					if( isset($_GET["parent"]) )
+					if( isset($_GET["parent"]) ) // If a parent is given then add idea as child to parent
 					{
 						if( !($_GET["parent"] == "") )
 						{
+							// TODO: Makes sure the idea is also here before submitting through mysql
 							$in_query = "INSERT INTO ideas(rating, idea, author, parent) VALUES(0, '". mysql_real_escape_string($_POST['idea'], $con) . "'," . mysql_real_escape_string($row['id'], $con) . "," . mysql_real_escape_string($_GET["parent"],$con) . ")";
 							mysql_query( $in_query );
 							header("Location: index.php");
@@ -75,6 +101,7 @@
 					}
 					else
 					{
+						// Otherwise don't give the idea a parent, and threrefore it will show up on the front page
 						$in_query = "INSERT INTO ideas(rating, idea, author) VALUES(0, '". mysql_real_escape_string($_POST['idea'], $con) . "'," . mysql_real_escape_string($row['id'], $con) . ")";
 						mysql_query( $in_query );
 						header("Location: index.php");
@@ -87,13 +114,14 @@
 				}
 			}
 		}
-		else
+		else // If the password is wrong send the user back to the index
 		{
 			header("Location: index.php");
 		}
 	}
-	else
+	else // If the user is not logged in they can not be on this page, so send them back to index
 	{
+		// TODO: add message that tells them to login before accessing this page
 		header("Location: index.php");
 	}
 ?>

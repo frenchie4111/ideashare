@@ -1,30 +1,16 @@
 <?php
+
+	/*
+	 * file: submitajax.php
+	 * This is the same file as the submit.php, just tweaked to be used through ajax
+	 *
+	 * TODO: Merge these two files so that it is not necessary to have both
+	 */
+
 	error_reporting(~E_NOTICE);
 	ini_set('display_errors', 'On');
 
 	include "connect.php";
-	function displayForm()
-	{
-		?>
-			<form method="post" action="submit.php">
-				Idea: <br/>
-				<textarea name="idea" rows="5" cols="40"></textarea>
-				
-				<script type="text/javascript" src="http://www.google.com/recaptcha/api/challenge?k=6Ld5TtoSAAAAABwreXK5D-N-Bithq46CwCwyvWlu"></script>
-				<noscript>
-					<iframe src="http://www.google.com/recaptcha/api/noscript?k=6Ld5TtoSAAAAABwreXK5D-N-Bithq46CwCwyvWlu"
-					height="300" width="500" frameborder="0"></iframe><br>
-					<textarea name="recaptcha_challenge_field" rows="3" cols="40">
-					</textarea>
-					<input type="hidden" name="recaptcha_response_field"
-					value="manual_challenge">
-				</noscript>
-
-				<input type="hidden" name="hidden" value="1" />
-				<input type="submit" value="Login" />
-			</form>
-		<?php
-	}
 	function checkCAPTCHA()
 	{
 		require_once('recaptchalib.php');
@@ -57,13 +43,13 @@
 		{
 			if( !isset( $_POST["hidden"] ) && $_POST["hidden"] != "1")
 			{
-				echo "Nothing";
+				echo "Nothing"; // If the user didn't submit anything, rahter than printing the form, just echo an error message
 			}
 			else
 			{
 				if( checkCAPTCHA() ==TRUE )
 				{
-					if( isset($_POST["parent"]) )
+					if( isset($_POST["parent"]) ) // Same as connect.php
 					{
 						if( !($_POST["parent"] == "") )
 						{
