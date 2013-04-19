@@ -85,6 +85,8 @@
 
 		while($row = mysql_fetch_array($result)) // Print out ideas in proper format
 		{
+			// Dynamically Generated code for each idea
+			// Would probably function better if some sort of template was used
 			echo "
 				<div class='idea' id='div" . $row['id'] . "'>
 					<table>

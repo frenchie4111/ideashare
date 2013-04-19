@@ -9,6 +9,8 @@ site is intended to also eventually be used for networking between people
 who have ideas, and people who have the skills necessary for completing those
 ideas.
 
+The website is currently hosted here: http://mikelyons.org/ideashare
+
 Known issues
 ------------
 - [ ] Voting  has been turned off due to multi user bug

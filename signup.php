@@ -1,8 +1,23 @@
 <?php
+
+	/*
+	 * file: signup.php
+	 * Allows a user to sign up for an account on the website
+	 *
+	 * TODO: Show error message if the user is already signed in
+	 *
+	 * Author: Mike Lyons <mdl0394@gmail.com>
+	 */
+
 	error_reporting(~E_NOTICE);
 	ini_set('display_errors', 'On');
 
 	include "connect.php";
+
+	/*
+	 * function displayForm()
+	 * Shows the login form for users
+	 */
 	function displayForm()
 	{
 		?>
@@ -24,9 +39,9 @@
 			</form>
 		<?php
 	}
-	if( !isset( $_POST['username'] ) && $_POST['username'] != "")
+	if( !isset( $_POST['username'] ) || $_POST['username'] != "")
 	{
-		displayForm();
+		displayForm(); // If information about a new account hasn't been given then show form
 	}
 	else
 	{
@@ -41,7 +56,7 @@
 		// What happens when the CAPTCHA was entered incorrectly
 			displayForm();
 			die ("The reCAPTCHA wasn't entered correctly. Go back and try it again." .
-			     "(reCAPTCHA said: " . $resp->error . ")");
+			     "(reCAPTCHA said: " . $resp->error . ")"); // TODO Make this not show every time
 		} 
 		else 
 		{
@@ -77,7 +92,7 @@
 							$_SESSION['password'] = md5( $_POST['password'] );
 							header( 'Location: index.php' );
 						}
-						else
+						else // Folows are the various fail messages when user has entered incorrect information
 						{
 							echo "Passwords do not match <br/>";
 							displayForm();

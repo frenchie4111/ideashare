@@ -3,7 +3,14 @@
 <?php
 	
 	/*
-	 * 
+	 * file: profile.php
+	 *
+	 * IN PROGRESS: NOT READY FOR HUMAN EYES
+	 *
+	 * This page will eventually show a users information: The things they have posted
+	 * How many idea points they have, and other useful information
+	 *
+	 * Author: Mike Lyons <mdl0394@gmail.com>
 	 */
 
 	include "connect.php";

@@ -1,7 +1,22 @@
 <?php
+
+		/*
+	 * file: login.php
+	 * Login form for users, allows them to log in using an already created account
+	 *
+	 * 
+	 *
+	 * Author: Mike Lyons <mdl0394@gmail.com>
+	 */
+
 	error_reporting(E_ALL);
 
 	include "connect.php";
+
+	/*
+	 * function displayForm()
+	 * Shows the login form for users
+	 */
 	function displayForm()
 	{
 		?>
@@ -12,7 +27,7 @@
 			</form>
 		<?php
 	}
-	if( !isset( $_POST['username'] ) )
+	if( !isset( $_POST['username'] ) ) // If they aren't logged in, then show them the form!
 	{
 		displayForm();
 	}
@@ -29,7 +44,7 @@
 
 		if( $row['password'] == md5( $_POST['password'] ) )
 		{
-			session_start();
+			session_start(); // Uses a session to store their username and password
 			$_SESSION['username'] = $row['username'];
 			$_SESSION['password'] = $row['password'];
 			$_SESSION['voted'] = explode(",", $row['voted']);
