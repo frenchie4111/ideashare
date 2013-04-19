@@ -347,7 +347,7 @@
 			"file": "vote.php",
 			"settings":
 			{
-				"buffer_size": 1113,
+				"buffer_size": 1373,
 				"line_ending": "Windows"
 			}
 		},
@@ -355,15 +355,25 @@
 			"file": "index.php",
 			"settings":
 			{
-				"buffer_size": 4481,
+				"buffer_size": 4806,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "Searching 3523 files for \"$_SESSION['voted']\"\n\n0 matches across 0 files\n\n\nSearching 3535 files for \"$_SESSION['voted']\"\n\n/home/mike/Dropbox/Programming/Web/ideashare/index.php:\n   96  									<tr><td class='vote'>\";\n   97  									echo \"<div id='u\" . $row['id'] . \"'>\";\n   98: 										if( isset( $_SESSION['voted'] ) )\n   99  										{\n  100: 											if( in_array( $row['id'], $_SESSION['voted'] ) )\n  101  											{\n  102  												echo \"<a>Up</a>\";\n  ...\n  118  									<tr><td class='vote'>\";\n  119  									echo \"<div id='d\" . $row['id'] . \"'>\";\n  120: 										if( isset( $_SESSION['voted'] ) )\n  121  										{\n  122: 											if(  in_array( $row['id'], $_SESSION['voted'] ) )\n  123  												{\n  124  													echo \"<a>Down</a>\";\n\n/home/mike/Dropbox/Programming/Web/ideashare/login.php:\n   48  			$_SESSION['username'] = $row['username'];\n   49  			$_SESSION['password'] = $row['password'];\n   50: 			$_SESSION['voted'] = explode(\",\", $row['voted']);\n   51  \n   52  			echo(\"Logged in as \" . $_POST['username']);\n\n/home/mike/Dropbox/Programming/Web/ideashare/vote.php:\n   37  				mysql_query( $up_usr_query );\n   38  \n   39: 				array_push( $_SESSION['voted'], $_POST['id'] );\n   40  			}\n   41  		}\n\n6 matches across 3 files\n",
+			"settings":
+			{
+				"buffer_size": 1262,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
 			}
 		},
 		{
 			"file": "script.js",
 			"settings":
 			{
-				"buffer_size": 5500,
+				"buffer_size": 8783,
 				"line_ending": "Windows"
 			}
 		},
@@ -376,26 +386,10 @@
 			}
 		},
 		{
-			"file": "profile.php",
-			"settings":
-			{
-				"buffer_size": 1141,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "children.php",
 			"settings":
 			{
-				"buffer_size": 1556,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "test.php",
-			"settings":
-			{
-				"buffer_size": 680,
+				"buffer_size": 1974,
 				"line_ending": "Windows"
 			}
 		},
@@ -403,7 +397,7 @@
 			"file": "submit.php",
 			"settings":
 			{
-				"buffer_size": 2871,
+				"buffer_size": 4254,
 				"line_ending": "Windows"
 			}
 		},
@@ -411,7 +405,50 @@
 			"file": "submitajax.php",
 			"settings":
 			{
-				"buffer_size": 2809,
+				"buffer_size": 2341,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 814,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "login.php",
+			"settings":
+			{
+				"buffer_size": 1390,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "signup.php",
+			"settings":
+			{
+				"buffer_size": 3739,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "<?php\n\ninclude \"connect.php\";\n\n$con = connect();\nselectDB( \"test\", $con );\n\n\n$result = mysql_query(\"SELECT * FROM ideas\");\n\nwhile($row = mysql_fetch_array($result))\n{\n	echo $row['id'] . \" \" . $row['idea'];\n	echo \"<br />\";\n}\n\nmysql_close($con);\n?>",
+			"file": "select.php",
+			"file_size": 263,
+			"file_write_time": 1355433865000000,
+			"settings":
+			{
+				"buffer_size": 246,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "profile.php",
+			"settings":
+			{
+				"buffer_size": 1421,
 				"line_ending": "Windows"
 			}
 		}
@@ -532,6 +569,11 @@
 	},
 	"file_history":
 	[
+		"/home/mike/Dropbox/Programming/Web/ideashare/logout.php",
+		"/home/mike/Dropbox/Programming/Web/ideashare/test.php",
+		"/home/mike/Dropbox/Programming/Web/ideashare/profile.php",
+		"/home/mike/Dropbox/Programming/Web/ideashare/VZPV3COC6as.gif",
+		"/home/mike/Dropbox/Programming/Web/ideashare/ideashare.sublime-project",
 		"/C/Users/Alaska/Dropbox/Programming/Web/ideashare/indexstyle.css",
 		"/C/Users/Alaska/Dropbox/Programming/Web/ideashare/index.php",
 		"/C/Users/Alaska/Dropbox/Programming/Web/ideashare/login.php",
@@ -594,9 +636,11 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
+			"/home/mike/Programming/inkscape/src/,<open files>",
+			"/home/mike/Programming/inkscape/src/"
 		]
 	},
 	"find_state":
@@ -604,6 +648,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"$_SESSION['voted']",
+			"displayForm",
 			";\n",
 			"'];\n",
 			"Right",
@@ -627,7 +673,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -635,15 +681,15 @@
 					"file": "vote.php",
 					"settings":
 					{
-						"buffer_size": 1113,
+						"buffer_size": 1373,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								953,
-								953
+								7,
+								7
 							]
 						],
 						"settings":
@@ -662,47 +708,20 @@
 					"file": "index.php",
 					"settings":
 					{
-						"buffer_size": 4481,
+						"buffer_size": 4806,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								499,
-								499
+								3949,
+								3949
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 630.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "script.js",
-					"settings":
-					{
-						"buffer_size": 5500,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								387,
-								387
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -712,7 +731,98 @@
 					"type": "text"
 				},
 				{
+					"buffer": 2,
+					"settings":
+					{
+						"buffer_size": 1262,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										300,
+										318
+									],
+									[
+										386,
+										404
+									],
+									[
+										595,
+										613
+									],
+									[
+										682,
+										700
+									],
+									[
+										937,
+										955
+									],
+									[
+										1177,
+										1195
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								74,
+								74
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"output_tag": 2,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 68.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
 					"buffer": 3,
+					"file": "script.js",
+					"settings":
+					{
+						"buffer_size": 8783,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8496,
+								8496
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3723.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
 					"file": "indexstyle.css",
 					"settings":
 					{
@@ -739,47 +849,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "profile.php",
-					"settings":
-					{
-						"buffer_size": 1141,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"auto_name": "",
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
 					"buffer": 5,
 					"file": "children.php",
 					"settings":
 					{
-						"buffer_size": 1556,
+						"buffer_size": 1974,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								514,
-								514
+								7,
+								7
 							]
 						],
 						"settings":
@@ -795,18 +877,18 @@
 				},
 				{
 					"buffer": 6,
-					"file": "test.php",
+					"file": "submit.php",
 					"settings":
 					{
-						"buffer_size": 680,
+						"buffer_size": 4254,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								273,
-								273
+								7,
+								7
 							]
 						],
 						"settings":
@@ -822,18 +904,18 @@
 				},
 				{
 					"buffer": 7,
-					"file": "submit.php",
+					"file": "submitajax.php",
 					"settings":
 					{
-						"buffer_size": 2871,
+						"buffer_size": 2341,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1561,
-								1561
+								288,
+								288
 							]
 						],
 						"settings":
@@ -842,25 +924,51 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 495.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 8,
-					"file": "submitajax.php",
+					"file": "README.md",
 					"settings":
 					{
-						"buffer_size": 2809,
+						"buffer_size": 814,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2402,
-								2402
+								492,
+								492
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "login.php",
+					"settings":
+					{
+						"buffer_size": 1390,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								226,
+								226
 							]
 						],
 						"settings":
@@ -868,8 +976,88 @@
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 86.0,
-						"translation.y": 675.0,
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "signup.php",
+					"settings":
+					{
+						"buffer_size": 3739,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7,
+								7
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "select.php",
+					"settings":
+					{
+						"buffer_size": 246,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6,
+								6
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "profile.php",
+					"settings":
+					{
+						"buffer_size": 1421,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								569,
+								569
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
