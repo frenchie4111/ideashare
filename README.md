@@ -11,6 +11,6 @@ ideas.
 
 Known issues
 ------------
--[ ] Voting  has been turned off due to multi user bug
--[ ] When users submit an inkling it should update the inklings box and show their submission
--[ ] Javascript should be updated to have more efficent onclick listeners
+- [ ] Voting  has been turned off due to multi user bug
+- [ ] When users submit an inkling it should update the inklings box and show their submission
+- [ ] Javascript should be updated to have more efficent onclick listeners
